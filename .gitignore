@@ -1,0 +1,54 @@
+# --- OS / 에디터 ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# --- Backend (NestJS monorepo, SWC/Jest) ---
+backend/node_modules/
+backend/dist/
+backend/coverage/
+backend/.nyc_output/
+backend/*.log
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+backend/pnpm-debug.log*
+backend/.eslintcache
+
+# 비밀/로컬 설정 (예시는 커밋)
+backend/.env
+backend/.env.*
+
+# --- Frontend (Next.js 16 / React) ---
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/coverage/
+frontend/.vercel/
+frontend/*.log
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/.eslintcache
+
+frontend/.env
+frontend/.env.*
+
+# --- 공통 (new-redash 루트에 둘 경우) ---
+node_modules/
+*.pem
+*.tsbuildinfo
+.redash-setup/
+
+# --- ai ---
+.claude/
+.agents/
+AGENTS.md
+CLAUDE.md

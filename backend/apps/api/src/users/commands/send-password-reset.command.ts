@@ -1,0 +1,8 @@
+import type { AuthenticatedUser } from '@app/common/interfaces/authenticated-user.interface';
+
+export class SendPasswordResetCommand {
+  constructor(
+    public readonly currentUser: AuthenticatedUser,
+    public readonly userId: number,
+  ) {}
+}

@@ -1,0 +1,9 @@
+import type { AuthenticatedUser } from '@app/common/interfaces/authenticated-user.interface';
+
+export class GetDataSourceSchemaQuery {
+  constructor(
+    public readonly user: AuthenticatedUser,
+    public readonly dataSourceId: number,
+    public readonly refresh = false,
+  ) {}
+}
