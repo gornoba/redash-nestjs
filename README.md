@@ -84,6 +84,26 @@ flowchart LR
     E --> F["api / worker / schedule / alert / frontend service create"]
 ```
 
+## Docker Swarm Ports
+
+Docker Swarm을 구성하려면 manager / worker 노드 사이에 아래 포트를 열어야 합니다.
+
+- `2377/tcp`: Swarm cluster management
+- `7946/tcp`: node communication
+- `7946/udp`: node communication
+- `4789/udp`: overlay network traffic
+
+이 프로젝트 기준 외부 공개 포트는 다음 정책을 따릅니다.
+
+- `80/tcp`: frontend 공개 포트
+- `4000/tcp`: `Swagger`를 활성화한 경우에만 `backend-api` 공개
+
+즉 운영 방화벽 기준으로는 보통 아래처럼 생각하면 됩니다.
+
+- node 간 통신: `2377/tcp`, `7946/tcp`, `7946/udp`, `4789/udp`
+- 사용자 공개: `80/tcp`
+- 선택적 admin 공개: `4000/tcp` (`Swagger`를 켠 경우만)
+
 ## `redash-start.sh`
 
 `redash-start.sh`는 Redash 첫 배포를 위한 대화형 wizard입니다.
